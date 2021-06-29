@@ -4,10 +4,11 @@ import CenteredImg from './centeredImg';
 import Category from 'styles/category';
 import DateTime from 'styles/dateTime';
 
-const Card = ({ thumbnail, alt, category, title, desc, date }) => {
+const Card = ({ icon, thumbnail, alt, category, title, desc, date }) => {
   return (
     <Wrapper>
-      <CenteredImg src={thumbnail} alt={alt} />
+      {/* <CenteredImg src={thumbnail} alt={alt} /> */}
+      <CenteredImg icon={icon} />
       <Text>
         <div>
           <Category>{category}</Category>
@@ -23,7 +24,6 @@ const Card = ({ thumbnail, alt, category, title, desc, date }) => {
 const Wrapper = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
   overflow: hidden;
   height: 100%;
   border-radius: var(--border-radius-base);

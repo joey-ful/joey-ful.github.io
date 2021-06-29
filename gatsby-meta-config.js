@@ -6,7 +6,7 @@ module.exports = {
   lang: 'en', // Language
   utterances: 'joey-ful.github.io/gatsby-starter-apple-comment', // Github repository to store comments
   links: {
-    github: 'https://github.com/joey-ful.github.io', // Your github repository
+    github: 'https://github.com/joey-ful/joey-ful.github.io', // Your github repository
   },
   icon: 'src/images/icon.png', //  Favicon Path
 };

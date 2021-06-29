@@ -3,35 +3,44 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
-const CenteredImg = ({ src, alt }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allImageSharp {
-        edges {
-          node {
-            id
-            fluid {
-              ...GatsbyImageSharpFluid
-              originalName
-            }
-          }
-        }
-      }
-    }
-  `);
+// const CenteredImg = ({ src, alt }) => {
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allImageSharp {
+  //       edges {
+  //         node {
+  //           id
+  //           fluid {
+  //             ...GatsbyImageSharpFluid
+  //             originalName
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  const CenteredImg = ({ icon }) => {
+  // const image = data.allImageSharp.edges.find((edge) => edge.node.id === src);
 
-  const image = data.allImageSharp.edges.find((edge) => edge.node.id === src);
-
-  if (!alt) alt = 'Thumbnail Image';
+  // if (!alt) alt = 'Thumbnail Image';
 
   return (
-    <ThumbnailWrapper>
-      <InnerWrapper>
-        <Img alt={alt} fluid={{ ...image.node.fluid, aspectRatio: 16 / 9 }} />
-      </InnerWrapper>
-    </ThumbnailWrapper>
+    // <ThumbnailWrapper>
+    //   <InnerWrapper>
+    //     <Img alt={alt} fluid={{ ...image.node.fluid, aspectRatio: 16 / 9 }} />
+    //   </InnerWrapper>
+    // </ThumbnailWrapper>
+    <IconWrapper>
+      {icon}
+    </IconWrapper>
   );
 };
+
+export const IconWrapper = styled.div`
+  border-radius = 5px;
+  background = gray;
+  font-size = 60px;
+`
 
 export const ThumbnailWrapper = styled.div`
   position: relative;

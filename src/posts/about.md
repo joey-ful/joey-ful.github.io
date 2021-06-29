@@ -1,6 +1,3 @@
-# Hello
+# Welcome To Joeyful
 
-Welcome to my blog. My name is Ed.<br>
-I'm very interested in the web front-end development.
-
-Visit my [Github repository](https://github.com/sungik-choi/gatsby-starter-apple).
+예비 iOS 개발자 Joey입니다 🤩 <br>

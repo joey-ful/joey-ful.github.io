@@ -8,7 +8,12 @@ const Card = ({ icon, thumbnail, alt, category, title, desc, date }) => {
   return (
     <Wrapper>
       {/* <CenteredImg src={thumbnail} alt={alt} /> */}
-      <CenteredImg icon={icon} />
+      {/* <CenteredImg icon={icon} /> */}
+      <IconWrapper>
+        <IconBackground>
+          {icon}
+        </IconBackground>
+      </IconWrapper>
       <Text>
         <div>
           <Category>{category}</Category>
@@ -20,6 +25,24 @@ const Card = ({ icon, thumbnail, alt, category, title, desc, date }) => {
     </Wrapper>
   );
 };
+
+const IconBackground = styled.div`
+  width: 100px;
+  height: 100px;
+  font-size: 80px;
+  border-radius: 10px;
+  background: #f1f3f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const IconWrapper = styled.div`
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const Wrapper = styled.div`
   position: relative;
@@ -62,7 +85,8 @@ const Title = styled.h3`
 
 const Desc = styled.p`
   line-height: 1.5;
-  margin-top: 8px;
+  font-size: 15px;
+  margin-top: 6px;
   padding-bottom: var(--sizing-sm);
   color: var(--color-text-2);
   display: -webkit-box;

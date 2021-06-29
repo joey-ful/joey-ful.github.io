@@ -1,4 +1,5 @@
 ---
+icon: "🏀"
 title: '[Bouncing Ball] clip()으로 도형에 이미지 넣고 애니메이션 적용'
 category: "FrontEnd"
 date: "2021-02-05 12:00:00 +09:00"

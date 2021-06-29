@@ -1,4 +1,5 @@
 ---
+icon: "🗃"
 title: 'Data Structures and Algorithms basics'
 category: "Algorithm"
 date: "2021-04-04 12:00:00 +09:00"

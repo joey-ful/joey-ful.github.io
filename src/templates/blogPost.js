@@ -12,7 +12,7 @@ import Markdown from 'styles/markdown';
 const BlogPost = ({ data }) => {
   const {
     markdownRemark: {
-      frontmatter: { title, desc, thumbnail, date, category },
+      frontmatter: { icon, title, desc, thumbnail, date, category },
       html,
     },
   } = data;
@@ -32,7 +32,7 @@ const BlogPost = ({ data }) => {
                     <PostCategory>{category}</PostCategory>
                     <Time dateTime={date}>{date}</Time>
                   </Info>
-                  <Title>{title}</Title>
+                  <Title>{icon}{title}</Title>
                   <Desc>{desc}</Desc>
                 </header>
                 <Divider />

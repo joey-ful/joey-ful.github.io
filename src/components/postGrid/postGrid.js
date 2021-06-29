@@ -17,12 +17,13 @@ const PostGrid = ({ posts }) => {
   return (
     <Grid role="list">
       {currentList.map((data) => {
-        const { id, slug, title, desc, date, category, thumbnail, alt } = data;
+        const { icon, id, slug, title, desc, date, category, thumbnail, alt } = data;
         const ariaLabel = `${title} - ${category} - Posted on ${date}`;
         return (
           <List key={id} role="listitem">
             <Link to={slug} aria-label={ariaLabel}>
               <Card
+                icon={icon}
                 thumbnail={thumbnail}
                 alt={alt}
                 category={category}
@@ -42,7 +43,7 @@ const PostGrid = ({ posts }) => {
 const Grid = styled.ul`
   display: grid;
   grid-gap: var(--grid-gap-xl);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   list-style: none;
 
   & > li {

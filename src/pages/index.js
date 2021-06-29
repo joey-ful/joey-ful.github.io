@@ -24,6 +24,7 @@ const Home = ({ pageContext, data }) => {
         id,
         fields: { slug },
         frontmatter: {
+          icon,
           title,
           desc,
           date,
@@ -36,6 +37,7 @@ const Home = ({ pageContext, data }) => {
       setPosts((prevPost) => [
         ...prevPost,
         {
+          icon,
           id,
           slug,
           title,
@@ -113,6 +115,7 @@ export const query = graphql`
         node {
           id
           frontmatter {
+            icon
             title
             category
             date(formatString: "YYYY-MM-DD")

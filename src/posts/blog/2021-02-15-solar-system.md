@@ -1,4 +1,5 @@
 ---
+icon: "☀️"
 title: '[Solar System] 태양을 중심으로 공전하는 행성 애니메이션 - 삼각함수편'
 category: "FrontEnd"
 date: "2021-02-15 12:00:00 +09:00"

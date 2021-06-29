@@ -1,4 +1,5 @@
 ---
+icon: "📑"
 title: '[CheatSheet] 파이썬 Python 코딩테스트'
 category: "Algorithm"
 date: "2021-03-20 12:00:00 +09:00"

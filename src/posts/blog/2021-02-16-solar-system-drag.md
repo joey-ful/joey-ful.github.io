@@ -1,4 +1,5 @@
 ---
+icon: "☀️"
 title: '[Solar System] 드래그 인터렉션 추가하기 - 삼각함수편'
 category: "FrontEnd"
 date: "2021-02-16 12:00:00 +09:00"

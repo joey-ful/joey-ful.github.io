@@ -1,4 +1,5 @@
 ---
+icon: "🖼"
 title: 'React Canvas Animation 캔버스 세팅'
 category: "FrontEnd"
 date: "2021-03-04 12:00:00 +09:00"

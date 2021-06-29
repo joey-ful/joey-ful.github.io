@@ -1,4 +1,5 @@
 ---
+icon: "☀️"
 title: '[Solar System] Elastic Drag 고무줄처럼 따라오는 드래그 인터렉션 - 삼각함수편'
 category: "FrontEnd"
 date: "2021-02-18 12:00:00 +09:00"

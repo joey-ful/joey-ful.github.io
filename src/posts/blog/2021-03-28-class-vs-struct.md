@@ -1,4 +1,5 @@
 ---
+icon: "🗄"
 title: 'Class vs Struct in Swift'
 category: "Swift"
 date: "2021-03-28 12:00:00 +09:00"

@@ -1,4 +1,5 @@
 ---
+icon: "✙"
 title: 'rotate 사용해서 십자가 모양 만들기'
 category: "FrontEnd"
 date: "2021-02-23 12:00:00 +09:00"

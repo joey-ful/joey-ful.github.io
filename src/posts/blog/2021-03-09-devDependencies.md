@@ -1,4 +1,5 @@
 ---
+icon: "💾"
 title: 'devDependencies'
 category: "FrontEnd"
 date: "2021-03-09 12:00:00 +09:00"

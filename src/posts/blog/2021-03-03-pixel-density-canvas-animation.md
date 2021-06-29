@@ -1,4 +1,5 @@
 ---
+icon: "📱"
 title: '픽셀 밀도(Pixel Density)와 캔버스 애니메이션'
 category: "FrontEnd"
 date: "2021-03-03 12:00:00 +09:00"

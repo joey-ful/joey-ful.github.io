@@ -1,4 +1,5 @@
 ---
+icon: "😢"
 title: '스위프트 혼자 남은 단어 widows and orphans'
 category: "Swift"
 date: "2021-03-14 12:00:00 +09:00"

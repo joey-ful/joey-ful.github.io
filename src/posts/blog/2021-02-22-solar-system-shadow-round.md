@@ -1,4 +1,5 @@
 ---
+icon: "☀️"
 title: '[Solar System] 둥근 그림자 드리우기 (Bezier Curve) - 삼각함수편'
 category: "FrontEnd"
 date: "2021-02-22 12:00:00 +09:00"

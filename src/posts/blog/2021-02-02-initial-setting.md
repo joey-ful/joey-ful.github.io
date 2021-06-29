@@ -1,4 +1,5 @@
 ---
+icon: "🖼"
 title: '[애니메이션 초기작업] 윈도우 창이 변할 때마다 Canvas 크기 새로 지정'
 category: "FrontEnd"
 date: "2021-02-02 12:00:00 +09:00"

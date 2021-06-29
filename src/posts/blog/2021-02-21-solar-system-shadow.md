@@ -1,4 +1,5 @@
 ---
+icon: "☀️"
 title: '[Solar System] 직사각형 그림자 드리우기 - 삼각함수편'
 category: "FrontEnd"
 date: "2021-02-21 12:00:00 +09:00"

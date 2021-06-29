@@ -1,4 +1,5 @@
 ---
+icon: "☀️"
 title: '[Solar System] 행성 일러스트 추가하기 - 삼각함수편'
 category: "FrontEnd"
 date: "2021-02-22 12:00:00 +09:00"

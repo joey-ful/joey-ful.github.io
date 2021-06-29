@@ -30,21 +30,25 @@ import Img from 'gatsby-image';
     //     <Img alt={alt} fluid={{ ...image.node.fluid, aspectRatio: 16 / 9 }} />
     //   </InnerWrapper>
     // </ThumbnailWrapper>
-    <IconWrapper>
-      {icon}
-    </IconWrapper>
+    // <ThumbnailWrapper>
+      <IconWrapper>
+        {icon}
+      </IconWrapper>
+    // </ThumbnailWrapper>
   );
 };
 
 export const IconWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   border-radius = 5px;
   background = gray;
-  font-size = 60px;
+  font-size = 100px;
 `
 
 export const ThumbnailWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 70%;
   &::after {
     content: '';
     display: block;

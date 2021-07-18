@@ -1,6 +1,6 @@
 ---
 icon: "📲"
-title: '뷰 컨트롤러간 데이터 전달 방법 7가지 (Passing Data Between ViewControllers)'
+title: '뷰 컨트롤러 간 데이터 전달 방법 7가지 (Passing Data Between ViewControllers)'
 category: "iOS"
 date: "2021-06-29 12:00:00 +09:00"
 desc: ""

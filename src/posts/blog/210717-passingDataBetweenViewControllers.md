@@ -8,28 +8,15 @@ thumbnail: "./images/markdown-test/thumbnail.jpg"
 alt: "markdown logo"
 ---
 
-> 참고 링크
-
-[5 Ways to Pass Data Between View Controllers](https://betterprogramming.pub/5-ways-to-pass-data-between-view-controllers-18acb467f5ec)
-
-[Pass Data Between View Controllers - LearnAppMaking](https://learnappmaking.com/pass-data-between-view-controllers-swift-how-to/#back-delegation)
-
----
-
-# A → B (다음 화면에 데이터 전달)
+# A → B (다음 화면에 데이터 전달) 
+</br>
 <img src="https://user-images.githubusercontent.com/52592748/126033978-7174f17f-d777-4c39-87fd-196773748eba.png" width="400"/>
 
 ## 1. Properties (segue 없이)
 
 `SourceVC` → `DestinationVC`로 이동할 때 `SourceVC`에서 바로 `DestinationVC`의 프로퍼티에 접근해서 데이터를 전달
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: segue 없이 이동하도록 구현한 코드 </b>  </summary>
-<div markdown="1">
-
-### FirstVC
+#### FirstVC
 
 ```swift
 class SourceViewController: UIViewController {
@@ -47,7 +34,7 @@ class SourceViewController: UIViewController {
 }
 ```
 
-### SecondVC
+#### SecondVC
 
 ```swift
 class DestinationViewController: UIViewController {
@@ -61,22 +48,14 @@ class DestinationViewController: UIViewController {
 }
 ```
 
-</div>
-</details>
-<br>
+---
 
 ## 2. Segues
 
 - 스토리보드에서 Source와 Destination을 segue로 연결해준다
 - Source에서 Destination으로 `prepare(for segue:sender:)`를 통해 정보를 전달할 수 있다
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: 스토리보드에서 segue를 연결했을 때의 코드 </b>  </summary>
-<div markdown="1">
-
-### **Source**
+#### **Source**
 
 ```swift
 class SourceViewController: UIViewController {
@@ -93,7 +72,7 @@ class SourceViewController: UIViewController {
 }
 ```
 
-### **Destination**
+#### **Destination**
 
 Destination에서는 `name` 을 받아서 사용할 것이기 때문에 비워둬도 된다
 
@@ -109,16 +88,14 @@ class DestinationViewController: UIViewController {
 }
 ```
 
-</div>
-</details>
-<br>
-
 ### ⚠️ 화면이동의 구현: 스토리보드 vs 코드
 
 스토리보드는 다양한 화면이동을 제한하고 개발을 복잡하게 만든다고 한다. 게다가 스토리보드나 XIB가 복잡해질 수록 Interface Builder가 많이 느려진다고 한다. 그래서 화면이동을 코드적으로 구현하는 것이 노력도 적게 들고 더 많은 것을 할 수 있다고 한다.
 
-# A ← B (되돌아갈 때 데이터 전달)
+---
 
+# A ← B (되돌아갈 때 데이터 전달)
+</br>
 <img src="https://user-images.githubusercontent.com/52592748/126033986-68e97da4-b951-4b3a-b12f-0930aee510aa.png" width="600"/>
 
 ## 3. Properties and Functions
@@ -128,15 +105,11 @@ class DestinationViewController: UIViewController {
     - secondVC로 이동하기 직전, firstVC는 secondVC의 firstVC를 self로 세팅한다
     - 그럼 나중에 secondVC에서 firstVC의 프로퍼티와 메서드를 접근할 수 있다
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: present로 이동한 뒤 dismiss로 돌아가는 코드 </b>  </summary>
-<div markdown="1">
+### present로 이동한 뒤 dismiss로 돌아가는 코드
 
 스토리보드에서 segue를 연결한 경우는 `prepare(for segue:)` 에서 처리해주면 된다
 
-### FirstVC
+#### FirstVC
 
 ```swift
 class FirstViewController: UIViewController {
@@ -156,7 +129,7 @@ class FirstViewController: UIViewController {
 }
 ```
 
-### SecondVC
+#### SecondVC
 
 ```swift
 class SecondViewController: UIViewController {
@@ -170,17 +143,9 @@ class SecondViewController: UIViewController {
 }
 ```
 
+### navigationController를 연결해 pop으로 돌아가는 코드
 
-</div>
-</details>
-<br>
-
-
-<details>
-<summary> <b> :page_facing_up: navigationController를 연결해 pop으로 돌아가는 코드 </b>  </summary>
-<div markdown="1">
-
-### FirstVC
+#### FirstVC
 
 ```swift
 class FirstViewController: UIViewController {
@@ -200,7 +165,7 @@ class FirstViewController: UIViewController {
 }
 ```
 
-### SecondVC
+#### SecondVC
 
 ```swift
 class SecondViewController: UIViewController {
@@ -214,15 +179,13 @@ class SecondViewController: UIViewController {
 }
 ```
 
-</div>
-</details>
-<br>
-
 ### ⚠️  하지만
 
 - firstVC와 secondVC의 관계는 타이트해서 모듈화가 되지 않는다. 이렇게 서로 엮이고 엮인 코드가 많아지면 spaghetti code가 된다고 한다.
 - 위 코드 예시는 retain cycle을 가진다. firstVC가 메모리에서 해제되지 않는이상 secondVC 또한 메모리에서 해제될 수 없다 (firstVC를 프로퍼티로 들고 있기 때문). 하지만 firstVC도 역시 secondVC가 메모리에 남아있는한 해제될 수 없다. (secondVC로 이동하는 코드가 있어서) ⇒ weak 키워드를 사용하는 것도 한 방법
 - 두 개발자가 각각 firstVC와 secondVC를 따로 맡아 개발하기 힘들다. 왜냐하면 두 VC들이 서로 타이트하게 연관되어있어 각 개발자들이 상대방의 VC에 대해서도 잘 이해하고 있어야하기 때문이다.
+
+---
 
 ## 4. Delegate design pattern - NavigationController
 
@@ -232,13 +195,7 @@ class SecondViewController: UIViewController {
     - `비서화면`이 `사장화면`의 delegate
 - 역할
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: 코드 </b>  </summary>
-<div markdown="1">
-
-### 프로토콜
+#### 프로토콜
 
 ```swift
 protocol Biseo {
@@ -246,7 +203,7 @@ protocol Biseo {
 }
 ```
 
-### **비서 (FirstVC)**
+#### **비서 (FirstVC)**
 
 ```swift
 class BiseoViewController: UIViewController {
@@ -270,7 +227,7 @@ extension BiseoViewController: Biseo {
 
 ```
 
-### **사장 (SecondVC)**
+#### **사장 (SecondVC)**
 
 ```swift
 class SajangViewController: UIViewController {
@@ -287,25 +244,17 @@ class SajangViewController: UIViewController {
 
 ```
 
-</div>
-</details>
-<br>
-
 ### 🥊  3번에 비해 좋은 점
 
 - 비서화면과 사장화면을 각각 개발하는 개발자들은 Protocol에 대해서만 알고있으면 된다. 각자 채택해서 적용하거나 말거나 마음대로
 - 두 화면 사이의 direct connection 이 없다. 이전 예시보다 더 loosely coupled 됐다고 볼 수 있다.
 - 프로토콜은 비서화면말고 다른 VC들도 채택할 수 있다
 
+---
+
 ## 5. Closures
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: 코드 </b>  </summary>
-<div markdown="1">
-
-### FirstVC
+#### FirstVC
 
 ```swift
 class FirstViewController: UIViewController {
@@ -324,7 +273,7 @@ class FirstViewController: UIViewController {
 }
 ```
 
-### SecondVC
+#### SecondVC
 
 ```swift
 class SecondViewController: UIViewController {
@@ -339,10 +288,6 @@ class SecondViewController: UIViewController {
 }
 ```
 
-</div>
-</details>
-<br>
-
 
 ### 🥊  클로저 사용의 이점과 주의점
 
@@ -352,9 +297,11 @@ class SecondViewController: UIViewController {
 
 > One of the risks of using closures to pass data between view controllers is that your code can become very dense. It’s smartest to only use closures to pass data between view controllers if it makes sense to use closures over any other method – instead of just using closures because they’re so convenient!
 
+---
+
 ## 6. Notification Center
 
-### Notification 생성하기
+#### Notification 생성하기
 
 - Notification을 원하는 이름으로 생성한다
     - notification들은 각각 자신을 구분할 이름이 있다
@@ -368,17 +315,6 @@ static let juiceNotification = Notification.Name("juiceIsReady")
 - `Notification.Name` extension
 - `NotificationCenter`에는 **세 가지 역할**이 있다: **observing, posting, receiving**
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: 코드 </b>  </summary>
-<div markdown="1">
-
-</div>
-</details>
-<br>
-
-
 
 ### 🥊  NotificationCenter의 용도
 
@@ -390,6 +326,8 @@ static let juiceNotification = Notification.Name("juiceIsReady")
 - 하나의 VC가 여러 notification에 반응해야할 때
 - 반복적이고 주기적으로 데이터를 보내고 싶을 때
 
+---
+
 ## 7. Singleton design pattern
 
 앱이 특정 클래스의 인스턴스 하나만 갖고 있을 것을 보장하고 해당 인스턴스는 앱 어디에서든지 접근이 가능하다
@@ -399,13 +337,7 @@ static let juiceNotification = Notification.Name("juiceIsReady")
 - ex. 앱의 세팅을 관리할 때
     - 사용자가 소리를 끄면 앱 전반에 반영되어야 한다
 
-### 코드
-
-<details>
-<summary> <b> :page_facing_up: 코드 </b>  </summary>
-<div markdown="1">
-
-### Singleton
+#### Singleton
 
 ```swift
 class JuiceMenu {
@@ -421,7 +353,7 @@ class JuiceMenu {
 }
 ```
 
-### FirstVC
+#### FirstVC
 
 SecondVC가 FirstVC에게 JuiceMenu가 바뀌었는지 알려줄 방법이 없다
 
@@ -451,7 +383,7 @@ class FirstViewController: UIViewController {
 }
 ```
 
-### SecondVC
+#### SecondVC
 
 ```swift
 class SecondViewController: UIViewController {
@@ -463,6 +395,9 @@ class SecondViewController: UIViewController {
     }
 }
 ```
-</div>
-</details>
-<br>
+
+---
+
+> 참고 링크 </br>
+[5 Ways to Pass Data Between View Controllers](https://betterprogramming.pub/5-ways-to-pass-data-between-view-controllers-18acb467f5ec)</br>
+[Pass Data Between View Controllers - LearnAppMaking](https://learnappmaking.com/pass-data-between-view-controllers-swift-how-to/#back-delegation)
